@@ -1,32 +1,35 @@
 
-import vendingmachine.VendingMachine;
+import vending_machine.VendingMachine;
 import inventory.*;
-import java.io.*;
 
-public class Main{
-
+class Main{
     public static void main(String args[]){
-        VendingMachine vendingMachine = new VendingMachine();
+        VendingMachine vendingMachine = new VendingMachine(3);
 
-        Product coke = new Product("COKE", 1, 10);
-        for( int i=1; i<=3; i++ ){
-            vendingMachine.addProduct(coke);
-        }
+        Product coke = new Product(1, 20, "Coke");
+        for( int i=0; i<3; i++ ) vendingMachine.addProduct(coke);
 
-        Product red_bull = new Product("RED_BULL", 2, 100);
-        for( int i=1; i<=3; i++ ){
-            vendingMachine.addProduct(red_bull);
-        }
- 
-        vendingMachine.insertCoin(10);
-        vendingMachine.insertCoin(1);
+        Product pepsi = new Product(2, 15, "Pepsi");
+        for( int i=0; i<3; i++ ) vendingMachine.addProduct(pepsi);
+
+        Product fanta = new Product(3, 10, "Fanta");
+        for( int i=0; i<3; i++ ) vendingMachine.addProduct(fanta);
+
+        Product redBull = new Product(4, 10, "RedBull");
+        for( int i=0; i<3; i++ ) vendingMachine.addProduct(redBull);
+
+        System.out.println();
+
+        vendingMachine.insertAmount(5);
         vendingMachine.pressButton(1);
-        System.out.println();
-        vendingMachine.insertCoin(50);
+        vendingMachine.insertAmount(10);
         vendingMachine.pressButton(2);
-        System.out.println();
-        vendingMachine.insertCoin(60);
+
+        vendingMachine.insertAmount(20);
+        vendingMachine.pressButton(1);
+
+        vendingMachine.insertAmount(25);
         vendingMachine.pressButton(2);
-        System.out.println();
+    
     }
 }
