@@ -5,7 +5,7 @@ public class BookMyShow{
 
     MovieController movieController;
     TheatreController theatreController;
-    City city;
+    City citySelected;
     Show showSelected;
     Movie movieSelected;
     Theatre theatreSelected;
@@ -18,8 +18,8 @@ public class BookMyShow{
     }
 
     public void getMoviesByCity(City currentCity){
-        city = currentCity;
-        List<Movie> movies  = movieController.getMoviesByCity(currentCity);
+        citySelected = currentCity;
+        List<Movie> movies  = movieController.getMoviesByCity(citySelected);
         System.out.println("Currently Available Movies In : " + currentCity.toString() );
         for( Movie movie : movies ){
             System.out.println(movie.getName() + " --- " + movie.getDuration());
@@ -31,21 +31,12 @@ public class BookMyShow{
         Movie movie = movieController.getMovieByName(movieName);
         movieSelected = movie;
 
-        Map<Theatre, List<Show>> allTheatresWithShows = theatreController.getAllShows(city, movie);
-
-        for( Map.Entry<Theatre, List<Show>> entry : allTheatresWithShows.entrySet() ){
-            System.out.println("Theatre Id: " + entry.getKey().getTheatreId() );
-            System.out.println("Show Id - Movie Name - ScreenId - Duration");
-            for( Show show : entry.getValue() ){
-                System.out.println(show.getShowId() + " - " + show.getMovie().getName() + " - " +  show.getScreen().getScreenId() + " - " + show.getTime());
-            }
-            System.out.println();
-        }
+        theatreController.getAllShowsByCityAndMovie(citySelected, movieSelected);
     }
 
 
     public void getAvailableSeats(Integer theatreId, Integer showId){
-        Map<Theatre, List<Show>> allTheatresWithShows = theatreController.getAllShows(city, movieSelected);
+        Map<Theatre, List<Show>> allTheatresWithShows = theatreController.getAllShows(citySelected, movieSelected);
         for( Map.Entry<Theatre, List<Show>> entry : allTheatresWithShows.entrySet() ){
             if( entry.getKey().getTheatreId() == theatreId ){
                 theatreSelected = entry.getKey();
@@ -113,12 +104,12 @@ public class BookMyShow{
         Movie bahubali = new Movie(2, "Bahubali", 145);
         Movie patan = new Movie(3, "PATAN", 140);
 
-        movieController.addMovie(city.DELHI, rrr);
-        movieController.addMovie(city.DELHI, bahubali);
-        movieController.addMovie(city.BANGLORE, bahubali);
-        movieController.addMovie(city.BANGLORE, patan);
-        movieController.addMovie(city.CHENNAI, patan);
-        movieController.addMovie(city.CHENNAI, rrr);
+        movieController.addMovie(City.DELHI, rrr);
+        movieController.addMovie(City.DELHI, bahubali);
+        movieController.addMovie(City.BANGLORE, bahubali);
+        movieController.addMovie(City.BANGLORE, patan);
+        movieController.addMovie(City.CHENNAI, patan);
+        movieController.addMovie(City.CHENNAI, rrr);
     }
 
 
@@ -148,10 +139,10 @@ public class BookMyShow{
         theatre2Shows.add(show4);
         theatre2.setShows(theatre2Shows);
 
-        theatreController.addTheatre(city.DELHI, theatre1);
-        theatreController.addTheatre(city.BANGLORE, theatre2);
-        theatreController.addTheatre(city.CHENNAI, theatre1);
-        theatreController.addTheatre(city.CHENNAI, theatre2);
+        theatreController.addTheatre(City.DELHI, theatre1);
+        theatreController.addTheatre(City.BANGLORE, theatre2);
+        theatreController.addTheatre(City.CHENNAI, theatre1);
+        theatreController.addTheatre(City.CHENNAI, theatre2);
 
     }
 

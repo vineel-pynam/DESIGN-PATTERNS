@@ -41,4 +41,19 @@ public class TheatreController{
     }
 
 
+    public void getAllShowsByCityAndMovie(City city, Movie movie){
+        Map<Theatre, List<Show>> allTheatresWithShows = getAllShows(city, movie);
+
+        for( Map.Entry<Theatre, List<Show>> entry : allTheatresWithShows.entrySet() ){
+            System.out.println("Theatre Id: " + entry.getKey().getTheatreId() );
+            System.out.println("Show Id - Movie Name - ScreenId - Duration");
+            for( Show show : entry.getValue() ){
+                System.out.println(show.getShowId() + " - " + show.getMovie().getName() + " - " +  show.getScreen().getScreenId() + " - " + show.getTime());
+            }
+            System.out.println();
+        }
+    }
+
+
+
 }
