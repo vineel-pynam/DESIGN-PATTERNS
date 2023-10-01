@@ -7,11 +7,11 @@
 
 
 ### Access Modifiers: 
-** PRIVATE:**
--  Methods/Variables can only be accessed by the class itself. They cannot be accessed outside the class.
-**Protected:**
-- Methods/Variables can only be accessed by the class and sub-classes. In java, they can be accessed by all classes within the same package.
-**Public:**
-- Methods/Variables can be accessed outside the class.
+- **PRIVATE:**
+	- Methods/Variables can only be accessed by the class itself. They cannot be accessed outside the class.
+- **Protected:**
+	- Methods/Variables can only be accessed by the class and sub-classes. In java, they can be accessed by all classes within the same package.
+- **Public:**
+	- Methods/Variables can be accessed outside the class.
 
 
