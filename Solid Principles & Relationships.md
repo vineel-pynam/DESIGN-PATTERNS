@@ -20,3 +20,18 @@
 - There will be an abstraction layer in between High level and Low Level Modules.
 - Notification Manager -> (Notification Sender (Interface) ) -> (Whatsapp Sender, SMS Sender, Gmail Sender (implements Notification Sender)).
 
+
+# Relationships
+### IS-A:
+- It is parent-child relation ship
+
+### Has-A:
+- It is of two types Composition and Aggregation.
+- **Composition:**
+	- It means Part of.
+	- Let's say (Person has heart), Heart gets destroyed if person is destroyed.
+	- One-to-one relationship kind-of.
+- Aggregation:
+	- It means Has-a.
+	- Let's say (Person has bag), Bag won't be destroyed if person is destroyed.
+	- Many-to-many, one-to-many relationship kind-of.
