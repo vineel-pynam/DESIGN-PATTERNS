@@ -1,9 +1,8 @@
-package factory;
+package win;
 
 import interfaces.*;
-import win.*;
 
-public class WindowsFactory implements UIfactory{
+public class WindowsUiFactory implements UiFactory{
 
     @Override
     public Button createButton(){

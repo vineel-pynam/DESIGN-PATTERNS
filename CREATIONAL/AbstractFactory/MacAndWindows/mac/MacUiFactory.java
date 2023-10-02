@@ -1,9 +1,8 @@
-package factory;
+package mac;
 
 import interfaces.*;
-import mac.*;
 
-public class MacFactory implements UIfactory{
+public class MacUiFactory implements UiFactory{
     @Override
     public Button createButton(){
         return new MacButton();
