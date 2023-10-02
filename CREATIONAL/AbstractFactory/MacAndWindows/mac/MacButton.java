@@ -4,7 +4,7 @@ import interfaces.Button;
 
 public class MacButton implements Button{
     @Override
-    public void paint(){
-        System.out.println("Mac Button");
+    public void setButtonText(){
+        System.out.println("It is a Mac Button");
     }
 }

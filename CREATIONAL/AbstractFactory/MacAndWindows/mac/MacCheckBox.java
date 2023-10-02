@@ -4,7 +4,7 @@ import interfaces.Checkbox;
 
 public class MacCheckBox implements Checkbox{
     @Override
-    public void paint(){
-        System.out.println("Mac Checkbox");
+    public void setCheckBoxText(){
+        System.out.println("It is a Mac Checkbox");
     }
 }

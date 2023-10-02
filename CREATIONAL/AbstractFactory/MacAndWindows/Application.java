@@ -12,8 +12,8 @@ public class Application{
         checkbox = uiFactory.createCheckbox();
     }
 
-    public void paint(){
-        button.paint();
-        checkbox.paint();
+    public void print(){
+        button.setButtonText();
+        checkbox.setCheckBoxText();
     }
 }
