@@ -1,4 +1,4 @@
-class IndianPizza extends Pizza{
+class IndianPizza implements FoodItem{
     @Override
     public String getDescription(){
         return "Indian Pizza";

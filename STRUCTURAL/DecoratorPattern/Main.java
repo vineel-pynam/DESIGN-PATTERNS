@@ -1,18 +1,18 @@
 class Main{
     public static void main(String[] args){
-        Pizza pizza = new IndianPizza();
-        System.out.println(pizza.getDescription());
-        System.out.println(pizza.getCost());
+        FoodItem indianPizza = new IndianPizza();
+        System.out.println(indianPizza.getDescription());
+        System.out.println(indianPizza.getCost());
         System.out.println();
 
-        pizza = new ExtraSpicy(pizza);
-        System.out.println(pizza.getDescription());
-        System.out.println(pizza.getCost());
+        indianPizza = new ExtraSpicy(indianPizza, 20);
+        System.out.println(indianPizza.getDescription());
+        System.out.println(indianPizza.getCost());
         System.out.println();
 
-        pizza = new ExtraCheese(pizza);
-        System.out.println(pizza.getDescription());
-        System.out.println(pizza.getCost());
+        indianPizza = new ExtraCheese(indianPizza, 40);
+        System.out.println(indianPizza.getDescription());
+        System.out.println(indianPizza.getCost());
 
     }
 }

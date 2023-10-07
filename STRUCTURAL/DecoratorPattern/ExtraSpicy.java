@@ -1,17 +1,18 @@
-class ExtraSpicy extends PizzaDecorator{
-    private Pizza pizza;
+class ExtraSpicy extends Decorator{
+    private Integer extraSpicyCost;
 
-    public ExtraSpicy(Pizza pizza){
-        this.pizza = pizza;
+    public ExtraSpicy(FoodItem foodItem, Integer cost){
+        super(foodItem);
+        this.extraSpicyCost = cost;
     }
 
     @Override
     public String getDescription(){
-        return pizza.getDescription() + " with extra spicy";
+        return foodItem.getDescription() + " with extra spicy";
     }
 
     @Override
     public Integer getCost(){
-        return pizza.getCost() + 20;
+        return foodItem.getCost() + extraSpicyCost;
     }
 }
